@@ -60,7 +60,10 @@ yabai -m rule --add app="IntelliJ IDEA" title="Intellij IDEA" manage=on
 yabai -m rule --add app="IntelliJ IDEA" title="Push Commits to * " manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="New Project" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="Get from Version Control" manage=off
+yabai -m rule --add app="IntelliJ IDEA" title="Copy" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="Settings" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="Project Structure" manage=off
 
+# QQ
+yabai -m rule --add app="QQ" title="图片查看器" manage=off
 echo "yabai configuration loaded.."
