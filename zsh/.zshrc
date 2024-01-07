@@ -18,7 +18,13 @@ source $ZSH/oh-my-zsh.sh
 
 alias cls='clear'
 alias jo='joshuto'
+alias vim='nvim'
+# VPN                                                                                                                                                                                    
+alias proxy='export all_proxy=http://127.0.0.1:7890'
+alias unproxy='unset all_proxy'
 
+
+# jenv config
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
@@ -30,12 +36,10 @@ export PATH=$PATH:/usr/local/mysql-5.7.31-macos10.14-x86_64/bin
 # protoc 环境变量
 export PATH=$PATH:/Users/kimi/developer/protoc/bin
 export PATH="/usr/local/bin:$PATH"
+# gradle 变量
+export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
 
 
-
-# Ai IPKERNEL
-export PATH=$PATH:chatglm3-demo
-export PATH=$PATH:/Users/kimi/AI/ChatGLM3/chatglm3-6b
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/kimi/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -50,10 +54,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
-
-# VPN                                                                                                                                                                                    
-alias proxy='export all_proxy=http://127.0.0.1:7890'
-alias unproxy='unset all_proxy'
 
