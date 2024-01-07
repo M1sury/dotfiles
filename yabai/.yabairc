@@ -1,0 +1,60 @@
+#!/usr/bin/env sh
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# global settings
+# 打开后,鼠标光标移动到聚焦窗口的中心(参数: off或on)
+yabai -m config mouse_follows_focus off
+# 打开后,鼠标移动到哪个窗口就聚焦到哪个窗口(参数: 默认off,autoraise,autofocus)
+yabai -m config focus_follows_mouse off
+yabai -m config window_origin_display default
+# 如果垂直拆分，新窗口会向右生成，如果水平拆分，则在底部生成
+yabai -m config window_placement second_child
+yabai -m config window_topmost off
+yabai -m config window_shadow float
+yabai -m config window_opacity on
+yabai -m config window_opacity_duration 0.15
+yabai -m config active_window_opacity 0.95
+yabai -m config normal_window_opacity 0.85
+yabai -m config window_border on
+yabai -m config window_border_width 4
+yabai -m config active_window_border_color 0xff8CABC8
+yabai -m config normal_window_border_color 0xff2a2f38
+yabai -m config insert_feedback_color 0xff9dd274
+yabai -m config split_ratio 0.50
+yabai -m config auto_balance off
+yabai -m config mouse_modifier alt
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config mouse_drop_action swap
+yabai -m config external_bar all:53:0
+
+# signal with sketchybar
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+# general space settings
+yabai -m config layout bsp
+# 下面都是窗口四周的边框距离,以及应用间的距离
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
+
+# 以下是一些特殊的应用,不需要被yabai管理
+yabai -m rule --add app="^System Preferences*" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^WeChat$" manage=off
+yabai -m rule --add app="^NetEaseMusic$" manage=off
+yabai -m rule --add app="^MonitorControl$" manage=off
+yabai -m rule --add app="^Tencent Lemon$" manage=off
+yabai -m rule --add app="^Snipaste$" manage=off border=off
+yabai -m rule --add app="IntelliJ IDEA" title="Settings" manage=off
+yabai -m rule --add app="IntelliJ IDEA" title="Project Structure" manage=off
+# yabai -m rule --add app="IntelliJ IDEA" title="New Project" manage=off
+echo "yabai configuration loaded.."

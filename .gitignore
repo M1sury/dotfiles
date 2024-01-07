@@ -1,0 +1,16 @@
+.idea
+.DS_Store
+.vscode
+.vscode-test
+.vscode-insiders
+.vscode-oss-dev
+.vscode-oss-test
+.vscode-oss-insiders
+.vscode-oss
+.vscode-insiders-dev
+.vscode-insiders-test
+.vscode-insiders-oss-dev
+.vscode-insiders-oss-test
+.vscode-insiders-oss
+.vscode-oss-dev-test
+*.iml
