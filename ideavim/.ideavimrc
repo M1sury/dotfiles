@@ -84,6 +84,7 @@ nmap <leader>fl <action>(SelectInProjectView)
 " action搜索
 nmap <leader>fc <action>(GotoAction)
 
+nmap <leader>fn <action>(GotoClass)
 " 代码格式化
 nmap <leader>fm <action>(ReformatCode) \| <action>(OptimizeImports)
 
