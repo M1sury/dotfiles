@@ -43,8 +43,8 @@ nmap gb <action>(Back)
 
 " 书签
 nmap ma mA
-nmap <leader>mo <action>(GotoBookmark0)
-nmap <leader>go m0
+nmap <leader>mo <action>(ToggleBookmark0)
+nmap <leader>go <action>(GotoBookmark0)
 
 " 删除相关
 nmap df d$
