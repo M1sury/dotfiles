@@ -1,5 +1,5 @@
 required:
 
 ```shell
-chmod -x preview_file.sh
+chmod 777 preview_file.sh
 ```

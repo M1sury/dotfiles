@@ -66,8 +66,9 @@ yabai -m rule --add app="IntelliJ IDEA" title="Project Structure" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="Plugin Updates" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="Welcome to IntelliJ IDEA" manage=off
 yabai -m rule --add app="IntelliJ IDEA" title="IDE Internal Errors" manage=off
-
+yabai -m rule --add app="IntelliJ IDEA" title="Run/Debug Configurations" manage=off
 yabai -m rule --add app="Jetbrains Toolbox" title="Jetbrains Toolbox" manage=off
+yabai -m rule --add app="微信" manage=on
 
 # QQ
 yabai -m rule --add app="QQ" title="图片查看器" manage=off

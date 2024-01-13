@@ -38,3 +38,6 @@ export PATH=$PATH:/Users/kimi/developer/protoc/bin
 export PATH="/usr/local/bin:$PATH"
 # gradle 变量
 export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
+
+# atuin
+eval "$(atuin init zsh)"
