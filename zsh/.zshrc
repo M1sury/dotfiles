@@ -19,10 +19,10 @@ source $ZSH/oh-my-zsh.sh
 alias cls='clear'
 alias jo='joshuto'
 alias vim='nvim'
-# VPN                                                                                                                                                                                    
+
+# VPN
 alias proxy='export all_proxy=http://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
-
 
 # jenv config
 export PATH="$HOME/.jenv/bin:$PATH"
