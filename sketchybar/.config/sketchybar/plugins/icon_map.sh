@@ -398,6 +398,9 @@ case $@ in
 "CLion-EAP" | "Clion")
   icon_result=":clion:"
   ;;
+"draw.io")
+  icon_result=":drawio:"
+  ;;
 #"Navicat Premium" | "Navicat")
 #  icon_result=":navicat:"
 #  ;;
