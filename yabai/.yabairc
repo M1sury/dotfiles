@@ -49,12 +49,12 @@ yabai -m rule --add app="^System Preferences*" manage=off
 yabai -m rule --add app="系统设置" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
-yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^NetEaseMusic$" manage=off
 yabai -m rule --add app="^MonitorControl$" manage=off
 yabai -m rule --add app="^Tencent Lemon$" manage=off
 yabai -m rule --add app="^Snipaste$" manage=off border=off
 yabai -m rule --add app="活动监视器" manage=off border=off
+yabai -m rule --add app='微信' manage=off
 
 # IDEA
 yabai -m rule --add app="IntelliJ IDEA" title="^IntelliJ IDEA$" manage=on
@@ -86,10 +86,9 @@ yabai -m rule --add app="Clion Nova" title="Run/Debug Configurations" manage=off
 # ToolBox
 yabai -m rule --add app="Jetbrains Toolbox" title="Jetbrains Toolbox" manage=off
 
-# 微信
-yabai -m rule --add app="微信" manage=on
 
 # QQ
 yabai -m rule --add app="QQ" title="图片查看器" manage=off
+yabai -m rule --add app="QQ" title="视频播放器" manage=off
 
 echo "yabai configuration loaded.."

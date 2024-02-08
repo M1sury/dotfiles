@@ -153,6 +153,8 @@ nmap <leader>rs <action>(IdeaVim.ReloadVimRc.reload)
 " 选择debug配置
 nmap <leader>rc :action ChooseDebugConfiguration<CR>
 
+" 文件重命名
+" nmap <leader>rf <action>(RenameElement)
 " =====================================================================================
 
 " w: 窗口分割，跳转 ⭐️(本人不常用，有需要可以打开注释)
@@ -226,7 +228,7 @@ map <leader>tt <action>(GenerateConstructor)
 " ================================================================================================
 sethandler <C-A> a:ide
 sethandler <C-C> a:vim
-sethandler <C-F> a:ide
+sethandler <C-F> a:vim
 sethandler <C-G> a:ide
 sethandler <C-P> a:vim
 sethandler <C-I> a:ide

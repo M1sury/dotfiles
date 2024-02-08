@@ -16,28 +16,35 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+###################################命令别名######################################################
 alias cls='clear'
-alias jo='joshuto'
+alias ls='lsd'
+# alias cd='z'
+
+alias o='open'
+alias jo='yazi'
 alias vim='nvim'
+alias vi='nvim'
 
 # VPN
 alias proxy='export all_proxy=http://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
+###################################命令别名######################################################
 
+
+###################################环境变量######################################################
 # jenv config
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
-
 # mysql环境变量
 export PATH=$PATH:/usr/local/mysql-5.7.31-macos10.14-x86_64/bin
-
 # protoc 环境变量
 export PATH=$PATH:/Users/kimi/developer/protoc/bin
 export PATH="/usr/local/bin:$PATH"
 # gradle 变量
 export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
-
 # atuin
 eval "$(atuin init zsh)"
+###################################环境变量######################################################
