@@ -40,11 +40,11 @@ nmap gn <action>(MethodDown)
 nmap gi <action>(GotoImplementation)
 nmap ga <action>(Annotate)
 nmap gb <action>(Back)
-
+nmap \e :e ~/.ideavimrc<CR>
 " 书签
 nmap ma mA
-nmap <leader>mo <action>(ToggleBookmark0)
-nmap <leader>go <action>(GotoBookmark0)
+nmap <leader>cm <action<(ToggleBookmark)
+nmap g1 <action>(GotoBookmark1)
 
 " 删除相关
 nmap df d$
@@ -206,6 +206,8 @@ vmap <leader>ef <action>(IntroduceField)
 
 vmap <leader>ev <action>(IntroduceVariable)
 
+vmap gam <Action>(me.laria.code.idea_caseconv.convert_case_menu)
+
 " =====================================================================================
 
 " m: 项目依赖工具: maven,gradle通用
@@ -294,3 +296,8 @@ let g:WhichKeyDesc_Close_Left = "<leader>cl CloseAllToTheLeft"
 
 " nerdTree
 let g:WhichKeyDesc_ToggleExplorerOrExtract = "<leader>e ToggleExplorer"
+
+""" Casing
+""" Requires https://plugins.jetbrains.com/plugin/10985-case-conversion
+let g:WhichKeyDesc_change_camel_case = "ga Casing"
+let g:WhichKeyDesc_change_case_menu = "gam Menu"
