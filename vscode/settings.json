@@ -1,0 +1,128 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Vim Dark Hard",
+    "redhat.telemetry.enabled": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.codeActionsOnSave": {
+    },
+    // leader键
+    "vim.leader": "<space>",
+    // 开启easymotion
+    "vim.easymotion": true,
+    // 启用系统粘贴板作为vim寄存器
+    "vim.useSystemClipboard": true,
+    // 突出显示搜索匹配的文本
+    "vim.hlsearch": true,
+    // 命令行模式非递归键位绑定，在vim中等同于norecmap
+    "vim.commandLineModeKeyBindingsNonRecursive": [],
+    // insertMap
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "commands": [
+                "extension.vim_left"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "commands": [
+                "extension.vim_down"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "extension.vim_up"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "commands": [
+                "extension.vim_right"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        }
+    ],
+    // noremap
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "l"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "c",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.closeOtherEditors"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "e"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        }
+    ]
+}
