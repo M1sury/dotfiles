@@ -1,103 +1,72 @@
 [
   {
-    "key": "ctrl+;",
-    "command": "extension.aceJump"
+    "key": "down",
+    "command": "cursorDown",
+    "when": "textInputFocus"
   },
   {
-    "key": "cmd+;",
-    "command": "extension.aceJump.line"
+    "key": "up",
+    "command": "cursorUp",
+    "when": "textInputFocus"
   },
   {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
+    "key": "ctrl+j",
+    "command": "cursorDown",
+    "when": "textInputFocus"
   },
   {
-    "key": "shift+cmd+e",
-    "command": "-workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
+    "key": "ctrl+k",
+    "command": "cursorUp",
+    "when": "textInputFocus"
   },
   {
-    "key": "shift+k",
-    "command": "editor.action.showDefinitionPreviewHover",
+    "key": "cmd+w",
+    "command": "editor.action.smartSelect.expand",
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
+    "key": "f1",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
+    "key": "ctrl+mousedown",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
   },
   {
-    "key": "j",
-    "command": "editor.action.scrollDownHover",
-    "when": "editorHoverFocused"
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
   {
-    "key": "k",
-    "command": "editor.action.scrollUpHover",
-    "when": "editorHoverFocused"
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
   {
-    "key": "h",
-    "command": "editor.action.scrollLeftHover",
-    "when": "editorHoverFocused"
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
   {
-    "key": "l",
-    "command": "editor.action.scrollRightHover",
-    "when": "editorHoverFocused"
-  },
-  // File Opts
-  {
-    "key": "cmd+n",
-    "command": "explorer.newFile",
-    "when": "explorerViewletFocus"
+    "key": "q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "sideBarFocus"
   },
   {
-    "key": "cmd+shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
+    "key": "q",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
   },
   {
-    "key": "cmd+shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!explorerViewletFocus"
+    "key": "q",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus"
   },
   {
-    "key": "cmd+shift+d",
-    "command": "deleteFile",
-    "when": "explorerViewletFocus"
-  },
-  // Toggle Terminal
-  {
-    "key": "ctrl+t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  // Toggle Testing
-  {
-    "key": "shift+cmd+t",
-    "command": "workbench.view.extension.test"
-  },
-  // Toggle Search results
-  {
-    "key": "ctrl+n",
-    "command": "search.action.focusNextSearchResult",
-    "when": "hasSearchResult && searchViewletVisible"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "search.action.focusPreviousSearchResult",
-    "when": "hasSearchResult && searchViewletVisible"
-  },
-  {
-    "key": "cmd+enter",
-    "command": "explorer.openAndPassFocus",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
-  }
+        "key": "o",
+        "command": "explorer.openAndPassFocus",
+        "when": "explorerViewletFocus && !inputFocus"
+    }
 ]

@@ -1,17 +1,15 @@
 #!/usr/bin/env sh
 
+# 加载并配置 yabai
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-# global settings
-# 打开后,鼠标光标移动到聚焦窗口的中心(参数: off或on)
+# 全局设置
 yabai -m config mouse_follows_focus off
-# 打开后,鼠标移动到哪个窗口就聚焦到哪个窗口(参数: 默认off,autoraise,autofocus)
-yabai -m config focus_follows_mouse off
+yabai -m config focus_follows_mouse autofocus
 yabai -m config window_origin_display default
-# 如果垂直拆分，新窗口会向右生成，如果水平拆分，则在底部生成
 yabai -m config window_placement second_child
-yabai -m config window_topmost off
+yabai -m config window_topmost on
 yabai -m config window_shadow float
 yabai -m config window_opacity on
 yabai -m config window_opacity_duration 0.15
@@ -30,21 +28,23 @@ yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
 yabai -m config external_bar all:53:0
 
-# signal with sketchybar
+
+
+
+# 与 sketchybar 的信号
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
-# general space settings
+# 一般空间设置
 yabai -m config layout bsp
-# 下面都是窗口四周的边框距离,以及应用间的距离
 yabai -m config top_padding 8
 yabai -m config bottom_padding 8
 yabai -m config left_padding 8
 yabai -m config right_padding 8
 yabai -m config window_gap 8
 
-# 以下是一些特殊的应用,不需要被yabai管理
+# 不由 yabai 管理的应用
 yabai -m rule --add app="^System Preferences*" manage=off
 yabai -m rule --add app="系统设置" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
@@ -55,40 +55,38 @@ yabai -m rule --add app="^Tencent Lemon$" manage=off
 yabai -m rule --add app="^Snipaste$" manage=off border=off
 yabai -m rule --add app="活动监视器" manage=off border=off
 yabai -m rule --add app='微信' manage=off
+yabai -m rule --add app="钉钉" manage=off
 
-# IDEA
-yabai -m rule --add app="IntelliJ IDEA" title="^IntelliJ IDEA$" manage=on
-yabai -m rule --add app="IntelliJ IDEA" title="Push Commits to * " manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="New Project" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Get from Version Control" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Copy" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Settings" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Project Structure" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Plugin Updates" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Welcome to IntelliJ IDEA" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="IDE Internal Errors" manage=off
-yabai -m rule --add app="IntelliJ IDEA" title="Run/Debug Configurations" manage=off
+# IntelliJ 系列应用
+apps=("IntelliJ IDEA" "WebStorm" "GoLand" "Clion nova" "Clion")
+for app in "${apps[@]}"; do
+    # 仅当窗口标题完全匹配应用名称时管理窗口
+    yabai -m rule --add app="$app" title="^$app$" manage=on
 
-# Clion
-yabai -m rule --add app="Clion Nova" title="Push Commits to * " manage=off
-yabai -m rule --add app="Clion Nova" title="New Project" manage=off
-yabai -m rule --add app="Clion Nova" title="Get from Version Control" manage=off
-yabai -m rule --add app="Clion Nova" title="Copy" manage=off
-yabai -m rule --add app="Clion Nova" title="Settings" manage=off
-yabai -m rule --add app="Clion Nova" title="Project Structure" manage=off
-yabai -m rule --add app="Clion Nova" title="Plugin Updates" manage=off
-yabai -m rule --add app="Clion Nova" title="Welcome to ^IntelliJ IDEA$" manage=off
-yabai -m rule --add app="Clion Nova" title="IDE Internal Errors" manage=off
-yabai -m rule --add app="Clion Nova" title="Run/Debug Configurations" manage=off
-yabai -m rule --add app="Clion Nova" title="IDE Internal Errors" manage=off
-yabai -m rule --add app="Clion Nova" title="Run/Debug Configurations" manage=off
+    # 为其他标题设置 manage=off
+    yabai -m rule --add app="$app" title=".*" manage=off
+done
+#for app in "${apps[@]}"; do
+#    yabai -m rule --add app="$app" title="^$app$" manage=on
+#    yabai -m rule --add app="$app" title="Welcome to ^$app$" manage=off
+#    yabai -m rule --add app="$app" title="Push Commits to * " manage=off
+#    yabai -m rule --add app="$app" title="New Project" manage=off
+#    yabai -m rule --add app="$app" title="Get From Version Control" manage=off
+#    yabai -m rule --add app="$app" title="Copy" manage=off
+#    yabai -m rule --add app="$app" title="Settings" manage=off
+#    yabai -m rule --add app="$app" title="Project Structure" manage=off
+#    yabai -m rule --add app="$app" title="Plugin Updates" manage=off
+#    yabai -m rule --add app="$app" title="Welcome To $app" manage=off
+#    yabai -m rule --add app="$app" title="Ide Internal Errors" manage=off
+#    yabai -m rule --add app="$app" title="Run/Debug Configurations" manage=off
+#    yabai -m rule --add app="$app" title="Edit Template Variables" manage=off
+#done
 
-# ToolBox
-yabai -m rule --add app="Jetbrains Toolbox" title="Jetbrains Toolbox" manage=off
-
+# JetBrains Toolbox
+yabai -m rule --add app="jetbrains toolbox" title="jetbrains toolbox" manage=off
 
 # QQ
 yabai -m rule --add app="QQ" title="图片查看器" manage=off
 yabai -m rule --add app="QQ" title="视频播放器" manage=off
 
-echo "yabai configuration loaded.."
+echo "yabai 配置已加载.."

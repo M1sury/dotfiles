@@ -113,7 +113,7 @@ nmap <leader>gu <action>(Git.Pull)
 
 nmap <leader>gp <action>(Vcs.Push)
 
-nmap <leader>ga <action>(Git.Branches)
+" nmap <leader>ga <action>(Git.Branches)
 
 " =====================================================================================
 
@@ -228,6 +228,9 @@ map <Leader>ta <action>(HideActivateWindow)
 map <leader>tc <action>(ActivateTerminalToolWindow)
 
 nmap tt <action>(GenerateConstructor)
+map <Leader>pf <action>(com.mituuz.fuzzier.Fuzzier)
+map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
+map <Leader>gf <action>(com.mituuz.fuzzier.FuzzierVCS)
 
 " ================================================================================================
 " = ide与vim的快捷键持久化 =====================================

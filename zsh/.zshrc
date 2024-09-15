@@ -1,30 +1,37 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Theme to load
 ZSH_THEME="ys"
 
-plugins=(git colored-man-pages colorize cp man command-not-found sudo ubuntu archlinux zsh-navigation-tools z extract history-substring-search python)
+plugins=(
+    git
+    colorize
+    cp
+    man
+    sudo
+    zsh-navigation-tools
+    z
+    extract
+    history-substring-search
+    python
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-completions
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 ###################################命令别名######################################################
 alias cls='clear'
 alias ls='lsd'
-# alias cd='z'
 
 alias o='open'
 alias jo='yazi'
 alias vim='nvim'
 alias vi='nvim'
+alias jv='java -version'
+alias java21='jenv global 21.0.2'
 
 # VPN
 alias proxy='export all_proxy=http://127.0.0.1:7890'
@@ -44,7 +51,25 @@ export PATH=$PATH:/usr/local/mysql-5.7.31-macos10.14-x86_64/bin
 export PATH=$PATH:/Users/kimi/developer/protoc/bin
 export PATH="/usr/local/bin:$PATH"
 # gradle 变量
-export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
-# atuin
-eval "$(atuin init zsh)"
+export PATH="/opt/homebrew/opt/gradle@6/bin:$PATH"
+# flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
 ###################################环境变量######################################################
+
+
+# >>> conda initialize >>>
+__conda_setup="$('/Users/kimi/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/kimi/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kimi/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/kimi/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

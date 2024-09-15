@@ -1,128 +1,73 @@
 {
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Vim Dark Hard",
-    "redhat.telemetry.enabled": true,
-    "editor.stickyScroll.enabled": false,
-    "editor.codeActionsOnSave": {
+  "workbench.colorTheme": "Vim Dark Hard",
+  "editor.fontSize": 15,
+  "editor.lineNumbers": "on",
+  "editor.cursorSurroundingLines": 30,
+
+  // Vim 配置
+  "vim.useSystemClipboard": true,
+  "vim.leader": " ",
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.easymotion": true,
+  "vim.surround": true,
+
+  // 插入模式键绑定
+  "vim.insertModeKeyBindings": [
+    { "before": ["<C-h>"], "after": ["<Left>"] },
+    { "before": ["<C-j>"], "after": ["<Down>"] },
+    { "before": ["<C-k>"], "after": ["<Up>"] },
+    { "before": ["<C-l>"], "after": ["<Right>"] }
+  ],
+
+  // 普通模式键绑定
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<leader>w"], "commands": ["workbench.action.files.save"] },
+    {
+      "before": ["<leader>q"],
+      "commands": ["workbench.action.closeActiveEditor"]
     },
-    // leader键
-    "vim.leader": "<space>",
-    // 开启easymotion
-    "vim.easymotion": true,
-    // 启用系统粘贴板作为vim寄存器
-    "vim.useSystemClipboard": true,
-    // 突出显示搜索匹配的文本
-    "vim.hlsearch": true,
-    // 命令行模式非递归键位绑定，在vim中等同于norecmap
-    "vim.commandLineModeKeyBindingsNonRecursive": [],
-    // insertMap
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "H"
-            ],
-            "commands": [
-                "extension.vim_left"
-            ]
-        },
-        {
-            "before": [
-                "J"
-            ],
-            "commands": [
-                "extension.vim_down"
-            ]
-        },
-        {
-            "before": [
-                "K"
-            ],
-            "commands": [
-                "extension.vim_up"
-            ]
-        },
-        {
-            "before": [
-                "L"
-            ],
-            "commands": [
-                "extension.vim_right"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "i"
-            ],
-            "commands": [
-                "editor.action.goToImplementation"
-            ]
-        }
-    ],
-    // noremap
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<leader>",
-                "n",
-                "l"
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "e"
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
-        {
-            "before": [
-                "L"
-            ],
-            "commands": [
-                "workbench.action.nextEditor"
-            ]
-        },
-        {
-            "before": [
-                "H"
-            ],
-            "commands": [
-                "workbench.action.previousEditor"
-            ]
-        },
-        {
-            "before": [
-                "c",
-                "e"
-            ],
-            "commands": [
-                "workbench.action.closeOtherEditors"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "e"
-            ],
-            "commands": [
-                "editor.action.marker.next"
-            ]
-        },
-        {
-            "before": [
-                "<Leader>",
-                "p"
-            ],
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        }
-    ]
+    { "before": ["<leader>e"], "commands": ["workbench.view.explorer"] },
+    { "before": ["<leader>g"], "commands": ["workbench.view.scm"] },
+    { "before": ["<leader>x"], "commands": ["workbench.view.extensions"] },
+    { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
+    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
+    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["g", "h"], "commands": ["editor.action.showHover"] },
+    { "before": ["<leader>","r","n"], "commands": ["editor.action.rename"] },
+    { "before": ["<leader>ff"], "commands": ["workbench.action.findInFiles"] },
+    { "before": ["<leader>fw"], "commands": ["actions.find"] },
+    { "before": ["<leader>fn"],"commands": ["workbench.action.findInFiles"]},
+    { "before": ["<leader>fc"], "commands": ["editor.action.formatDocument"] },
+    { "before": ["z", "c"], "commands": ["editor.fold"] },
+    { "before": ["z", "o"], "commands": ["editor.unfold"] },
+    {
+      "before": ["<leader>t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>b"],
+      "commands": ["workbench.action.toggleActivityBarVisibility"]
+    },
+    { "before": ["<leader>j"], "commands": ["workbench.action.togglePanel"] },
+    { "before": ["<leader>d"], "commands": ["workbench.view.debug"] },
+    { "before": ["<leader>p"], "commands": ["workbench.action.showCommands"] },
+    { "before": ["c", "l"], "commands": ["extension.closeAllTabsToTheLeft"] },
+    { "before": ["c", "f"], "commands": ["extension.closeAllTabsToTheRight"] }
+  ],
+
+  // 其他 VS Code 设置
+  "files.autoSave": "afterDelay",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "workbench.editor.enablePreview": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

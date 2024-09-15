@@ -401,15 +401,33 @@ case $@ in
 "draw.io")
   icon_result=":drawio:"
   ;;
-#"Navicat Premium" | "Navicat")
-#  icon_result=":navicat:"
-#  ;;
-#"DBeaver Community" | "DBeaver")
-#  icon_result=":dbeaver:"
-#  ;;
-#"DataGrip")
-#  icon_result=":datagrip:"
-#  ;;
+"网易有道翻译")
+  icon_result=":youdao:"
+  ;;
+"Navicat Premium" | "Navicat")
+  icon_result=":navicat:"
+  ;;
+"IINA")
+  icon_result=":iina:"
+  ;;
+"百度网盘")
+  icon_result=":dupan:"
+  ;;
+"备忘录")
+  icon_result=":memo:"
+  ;;
+"DBeaver Community" | "DataGrip")
+  icon_result=":db:"
+  ;;
+"Wireshark")
+  icon_result=":wireshark:"
+  ;;
+"RedisInsight")
+  icon_result=":redisinsight:"
+  ;;
+"OrbStack")
+  icon_result=":orbstack:"
+  ;;
 *)
   icon_result=":default:"
   ;;
