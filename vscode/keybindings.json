@@ -5,8 +5,8 @@
     "when": "textInputFocus"
   },
   {
-    "key": "up",
-    "command": "cursorUp",
+    "key": "ctrl+n",
+    "command": "cursorDown",
     "when": "textInputFocus"
   },
   {
@@ -15,19 +15,24 @@
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+k",
-    "command": "cursorUp",
-    "when": "textInputFocus"
-  },
-  {
     "key": "cmd+w",
     "command": "editor.action.smartSelect.expand",
     "when": "editorTextFocus"
   },
   {
-    "key": "f1",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
+    "key": "up",
+    "command": "cursorUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "cursorUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorUp",
+    "when": "textInputFocus"
   },
   {
     "key": "ctrl+mousedown",
@@ -42,11 +47,6 @@
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
-  },
-  {
-    "key": "space e",
-    "command": "workbench.view.explorer",
     "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
   {
@@ -65,8 +65,8 @@
     "when": "sideBarFocus"
   },
   {
-        "key": "o",
-        "command": "explorer.openAndPassFocus",
-        "when": "explorerViewletFocus && !inputFocus"
-    }
+    "key": "o",
+    "command": "explorer.openAndPassFocus",
+    "when": "explorerViewletFocus && !inputFocus"
+  }
 ]
