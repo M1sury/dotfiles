@@ -186,12 +186,6 @@ nmap <leader>zc <action>(CollapseAllRegions)
 " c: 关闭打开的文件 ⭐️;
 nmap <leader>c :q!<CR>
 
-nmap cr <action>(CloseAllToTheRight)
-
-nmap cl <action>(CloseAllToTheLeft)
-
-nmap ce <action>(CloseAllEditorsButActive)
-
 " 复制文件名称或路径
 nmap <leader>cp <action>(CopyAbsolutePath)
 
@@ -214,6 +208,13 @@ vmap ev <action>(IntroduceVariable)
 vmap gam <Action>(StringManipulation.Group.SwitchCase)
 
 " =====================================================================================
+" b: buffer
+
+nmap br <action>(CloseAllToTheRight)
+
+nmap bl <action>(CloseAllToTheLeft)
+
+nmap be <action>(CloseAllEditorsButActive)
 
 " m: 项目依赖工具: maven,gradle通用
 " maven/gradle 刷新项目
