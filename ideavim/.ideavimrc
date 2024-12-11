@@ -1,10 +1,9 @@
-" ================================================================================================
+" ===========================================
 " = 插件 =====================================
-" ================================================================================================
+" ===========================================
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
-Plug 'vim-multiple-cursors'
 
 " ================================================================================================
 " = 基础配置 =====================================
@@ -114,7 +113,7 @@ nmap <leader>gu <action>(Git.Pull)
 
 nmap <leader>gp <action>(Vcs.Push)
 
-" nmap <leader>ga <action>(Git.Branches)
+nmap <leader>ga <action>(Git.Branches)
 
 " =====================================================================================
 
@@ -151,6 +150,7 @@ nmap <leader>rt <action>(RerunTests)
 
 " 对选中的元素(函数/变量)进行重命名操作
 nmap rn <action>(RenameElement)
+noremap <Space>re :action RenameElement<CR>
 
 " ideavim配置文件重载
 nmap <leader>rs <action>(IdeaVim.ReloadVimRc.reload)
@@ -163,16 +163,16 @@ nmap <leader>rc :action ChooseDebugConfiguration<CR>
 " =====================================================================================
 
 " w: 窗口分割，跳转 ⭐️(本人不常用，有需要可以打开注释)
-" nmap <leader>ww <C-W>w
-" nmap <leader>wd <C-W>c
-" nmap <leader>wj <C-W>j
-" nmap <leader>wk <C-W>k
-" nmap <leader>wh <C-W>h
-" nmap <leader>wl <C-W>l
-" nmap <leader>ws <C-W>s
-" nmap <leader>w- <C-W>s
-" nmap <leader>wv <C-W>v
-" nmap <leader>w\| <C-W>v
+nmap <leader>ww <C-W>w
+nmap <leader>wd <C-W>c
+nmap <leader>wj <C-W>j
+nmap <leader>wk <C-W>k
+nmap <leader>wh <C-W>h
+nmap <leader>wl <C-W>l
+nmap <leader>ws <C-W>s
+nmap <leader>w- <C-W>s
+nmap <leader>wv <C-W>v
+nmap <leader>w\| <C-W>v
 
 " =====================================================================================
 
@@ -185,6 +185,12 @@ nmap <leader>zc <action>(CollapseAllRegions)
 
 " c: 关闭打开的文件 ⭐️;
 nmap <leader>c :q!<CR>
+
+nmap <leader>br <action>(CloseAllToTheRight)
+
+nmap <leader>bl <action>(CloseAllToTheLeft)
+
+nmap <leader>be <action>(CloseAllEditorsButActive)
 
 " 复制文件名称或路径
 nmap <leader>cp <action>(CopyAbsolutePath)
@@ -208,13 +214,6 @@ vmap ev <action>(IntroduceVariable)
 vmap gam <Action>(StringManipulation.Group.SwitchCase)
 
 " =====================================================================================
-" b: buffer
-
-nmap br <action>(CloseAllToTheRight)
-
-nmap bl <action>(CloseAllToTheLeft)
-
-nmap be <action>(CloseAllEditorsButActive)
 
 " m: 项目依赖工具: maven,gradle通用
 " maven/gradle 刷新项目
@@ -228,18 +227,16 @@ map <Leader>to <action>(ActivateTODOToolWindow)
 map <Leader>ta <action>(HideActivateWindow)
 
 map <leader>tc <action>(ActivateTerminalToolWindow)
+noremap <Space>tr :action $TranslateAndReplaceAction<CR>
 
 nmap tt <action>(GenerateConstructor)
-map <Leader>pf <action>(com.mituuz.fuzzier.Fuzzier)
-map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
-map <Leader>gf <action>(com.mituuz.fuzzier.FuzzierVCS)
 
 " ================================================================================================
 " = ide与vim的快捷键持久化 =====================================
 " ================================================================================================
 sethandler <C-A> a:ide
 sethandler <C-C> a:vim
-sethandler <C-F> a:vim
+sethandler <C-F> a:ide
 sethandler <C-G> a:ide
 sethandler <C-P> a:vim
 sethandler <C-I> a:ide
