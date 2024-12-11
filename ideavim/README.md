@@ -10,4 +10,4 @@
 * Which-Key: 显示键盘快捷键的提示和帮助信息
 * Api-Post-Helper 2.0: 根据controller的映射路径快速定位到该方法
 * vo2dto: java对象转换工具
-* case-conversion: 名称转换插件，驼峰等格式
+* String Manipulation: 名称转换插件，驼峰等格式
