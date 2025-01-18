@@ -1,9 +1,10 @@
-" ===========================================
+" ================================================================================================
 " = 插件 =====================================
-" ===========================================
+" ================================================================================================
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
+Plug 'vim-multiple-cursors'
 
 " ================================================================================================
 " = 基础配置 =====================================
@@ -297,8 +298,8 @@ let g:WhichKeyDesc_Zip_ZipAll = "<leader>zc ZipAll"
 
 " 关闭/切换文件Buffer
 let g:WhichKeyDesc_CloseBuffer = "<leader>c CloseBuffer"
-let g:WhichKeyDesc_Close_Right = "<leader>cr CloseAllToTheRight"
-let g:WhichKeyDesc_Close_Left = "<leader>cl CloseAllToTheLeft"
+let g:WhichKeyDesc_Close_Right = "<leader>br CloseAllToTheRight"
+let g:WhichKeyDesc_Close_Left = "<leader>bl CloseAllToTheLeft"
 
 " nerdTree
 let g:WhichKeyDesc_ToggleExplorerOrExtract = "<leader>e ToggleExplorer"

@@ -29,6 +29,7 @@ alias ls='lsd'
 alias o='open'
 alias jo='yazi'
 alias vim='nvim'
+alias lg='lazygit'
 alias vi='nvim'
 alias jv='java -version'
 alias java21='jenv global 21.0.2'
@@ -56,10 +57,18 @@ export PATH="/opt/homebrew/opt/gradle@6/bin:$PATH"
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
+# fzf
+export FZF_DEFAULT_OPTS=''
+export FZF_COMPLETION_TRIGGER='\'
+
+# Go-proxy
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+
 ###################################环境变量######################################################
 
-
 # >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/kimi/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"

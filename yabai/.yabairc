@@ -58,29 +58,31 @@ yabai -m rule --add app='微信' manage=off
 yabai -m rule --add app="钉钉" manage=off
 
 # IntelliJ 系列应用
-apps=("IntelliJ IDEA" "WebStorm" "GoLand" "Clion nova" "Clion")
-for app in "${apps[@]}"; do
-    # 仅当窗口标题完全匹配应用名称时管理窗口
-    yabai -m rule --add app="$app" title="^$app$" manage=on
-
-    # 为其他标题设置 manage=off
-    yabai -m rule --add app="$app" title=".*" manage=off
-done
+apps=("IntelliJ IDEA" "WebStorm" "GoLand" "Clion nova" "Clion","DataGrip")
 #for app in "${apps[@]}"; do
+#    # 仅当窗口标题完全匹配应用名称时管理窗口
 #    yabai -m rule --add app="$app" title="^$app$" manage=on
-#    yabai -m rule --add app="$app" title="Welcome to ^$app$" manage=off
-#    yabai -m rule --add app="$app" title="Push Commits to * " manage=off
-#    yabai -m rule --add app="$app" title="New Project" manage=off
-#    yabai -m rule --add app="$app" title="Get From Version Control" manage=off
-#    yabai -m rule --add app="$app" title="Copy" manage=off
-#    yabai -m rule --add app="$app" title="Settings" manage=off
-#    yabai -m rule --add app="$app" title="Project Structure" manage=off
-#    yabai -m rule --add app="$app" title="Plugin Updates" manage=off
-#    yabai -m rule --add app="$app" title="Welcome To $app" manage=off
-#    yabai -m rule --add app="$app" title="Ide Internal Errors" manage=off
-#    yabai -m rule --add app="$app" title="Run/Debug Configurations" manage=off
-#    yabai -m rule --add app="$app" title="Edit Template Variables" manage=off
+#
+#    # 为其他标题设置 manage=off
+#    yabai -m rule --add app="$app" title=".*" manage=off
 #done
+for app in "${apps[@]}"; do
+    yabai -m rule --add app="$app" title="^$app$" manage=on
+    yabai -m rule --add app="$app" title="Welcome to $app" manage=off
+    yabai -m rule --add app="$app" title="Push Commits to * " manage=off
+    yabai -m rule --add app="$app" title="New Project" manage=off
+    yabai -m rule --add app="$app" title="Get from Version Control" manage=off
+    yabai -m rule --add app="$app" title="Copy" manage=off
+    yabai -m rule --add app="$app" title="Settings" manage=off
+    yabai -m rule --add app="$app" title="Project Structure" manage=off
+    yabai -m rule --add app="$app" title="Plugin Updates" manage=off
+    yabai -m rule --add app="$app" title="Welcome To $app" manage=off
+    yabai -m rule --add app="$app" title="Ide Internal Errors" manage=off
+    yabai -m rule --add app="$app" title="Run/Debug Configurations" manage=off
+    yabai -m rule --add app="$app" title="Edit Template Variables" manage=off
+    yabai -m rule --add app="$app" title="Add File to Git" manage=off
+    yabai -m rule --add app="$app" title="Define Remote" manage=off
+done
 
 # JetBrains Toolbox
 yabai -m rule --add app="jetbrains toolbox" title="jetbrains toolbox" manage=off
